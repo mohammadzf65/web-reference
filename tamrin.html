@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرجع جامع HTML5 (به‌روز)</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="main-header">
+        <h1>مرجع جامع HTML5</h1>
+        <p>راهنمای کامل تگ‌ها و مفاهیم به‌روز HTML</p>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#intro">مقدمه</a></li>
+            <li><a href="#structural-tags">تگ‌های ساختاری و معنایی</a></li>
+            <li><a href="#text-tags">تگ‌های متنی اساسی</a></li>
+            <li><a href="#forms">تگ‌های فرم</a></li>
+            <li><a href="#tables">تگ‌های جدول</a></li>
+            <li><a href="#multimedia">تگ‌های چندرسانه‌ای</a></li>
+            <li><a href="#advanced-concepts">مفاهیم پیشرفته و نکات</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        <section id="intro" class="html-section">
+            <h2>مقدمه و ساختار کلی HTML5</h2>
+            <p>هر سند HTML با یک ساختار پایه شروع می‌شود که به مرورگر می‌گوید چگونه محتوای صفحه را تفسیر کند.</p>
+            <details>
+                <summary>مشاهده کد و توضیحات</summary>
+                <div class="code-example">
+                    <h3>ساختار پایه HTML</h3>
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="fa" dir="rtl"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;عنوان صفحه من&lt;/title&gt;
+    &lt;!-- اینجا لینک به فایل‌های CSS و سایر متادیتا قرار می‌گیرد --&gt;
+    &lt;link rel="stylesheet" href="css/styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- محتوای اصلی صفحه اینجا قرار می‌گیرد --&gt;
+    &lt;header&gt;
+        &lt;h1&gt;عنوان اصلی وب‌سایت&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;بخش اول&lt;/h2&gt;
+            &lt;p&gt;این یک پاراگراف در بخش اول است.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2023 نام وب‌سایت. تمامی حقوق محفوظ است.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                    <p>
+                        <ul>
+                            <li>**&lt;!DOCTYPE html&gt;**: اعلامیه HTML5.</li>
+                            <li>**&lt;html lang="fa" dir="rtl"&gt;**: تگ ریشه سند با تنظیم زبان فارسی و جهت راست به چپ.</li>
+                            <li>**&lt;head&gt;**: شامل متادیتا (مثل عنوان، کدگذاری، ریسپانسیو و لینک CSS).</li>
+                            <li>**&lt;body&gt;**: حاوی تمام محتوای قابل مشاهده صفحه.</li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <section id="structural-tags" class="html-section">
+            <h2>تگ‌های ساختاری و معنایی (Semantic Tags)</h2>
+            <p>HTML5 تگ‌های جدیدی را معرفی کرده که به بخش‌های مختلف صفحه معنای خاصی می‌دهند.</p>
+
+            <details>
+                <summary>&lt;header&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;header&gt;</h3>
+                    <p>معمولاً شامل محتوای مقدماتی یا ابزارهای ناوبری.</p>
+                    <pre><code>
+&lt;header&gt;
+    &lt;img src="logo.png" alt="لوگو وب‌سایت"&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;صفحه اصلی&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;درباره ما&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;nav&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;nav&gt;</h3>
+                    <p>برای گروه‌بندی لینک‌های ناوبری اصلی.</p>
+                    <pre><code>
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;درباره ما&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#services"&gt;خدمات&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;main&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;main&gt;</h3>
+                    <p>محتوای اصلی و منحصر به فرد سند. فقط یک تگ &lt;main&gt; در هر صفحه.</p>
+                    <pre><code>
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h1&gt;عنوان مقاله&lt;/h1&gt;
+        &lt;p&gt;محتوای مقاله...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;section&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;section&gt;</h3>
+                    <p>یک بخش مستقل از سند، معمولاً با یک عنوان.</p>
+                    <pre><code>
+&lt;section&gt;
+    &lt;h2&gt;خدمات ما&lt;/h2&gt;
+    &lt;p&gt;ما خدمات متنوعی را ارائه می‌دهیم...&lt;/p&gt;
+&lt;/section&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;article&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;article&gt;</h3>
+                    <p>محتوای مستقل و خودکفا (مثل پست وبلاگ).</p>
+                    <pre><code>
+&lt;article&gt;
+    &lt;h3&gt;پست وبلاگ: نکاتی برای کدنویسی بهتر&lt;/h3&gt;
+    &lt;p&gt;اینجا محتوای کامل پست وبلاگ قرار می‌گیرد.&lt;/p&gt;
+&lt;/article&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;aside&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;aside&gt;</h3>
+                    <p>محتوای جانبی یا حاشیه‌ای (مثل سایدبار).</p>
+                    <pre><code>
+&lt;aside&gt;
+    &lt;h4&gt;تبلیغات&lt;/h4&gt;
+    &lt;p&gt;اینجا فضای تبلیغات است.&lt;/p&gt;
+&lt;/aside&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;footer&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;footer&gt;</h3>
+                    <p>اطلاعات پایین صفحه (کپی‌رایت، تماس).</p>
+                    <pre><code>
+&lt;footer&gt;
+    &lt;p&gt;&amp;copy; 2023 وب‌سایت من&lt;/p&gt;
+    &lt;a href="#"&gt;سیاست حریم خصوصی&lt;/a&gt;
+&lt;/footer&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;div&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;div&gt;</h3>
+                    <p>تقسیم‌بندی عمومی بدون معنای خاص (برای گروه‌بندی با CSS/JS).</p>
+                    <pre><code>
+&lt;div class="card-container"&gt;
+    &lt;div class="card"&gt;
+        &lt;h3&gt;محصول ۱&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+                </div>
+            </details>
+        </section>
+
+        <section id="text-tags" class="html-section">
+            <h2>تگ‌های متنی اساسی</h2>
+
+            <details>
+                <summary>&lt;h1&gt; تا &lt;h6&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;h1&gt; تا &lt;h6&gt;</h3>
+                    <p>تگ‌های عنوان (Heading) برای سلسله‌مراتب محتوا.</p>
+                    <pre><code>
+&lt;h1&gt;عنوان اصلی مقاله&lt;/h1&gt;
+&lt;h2&gt;زیرعنوان بخش اول&lt;/h2&gt;
+&lt;h3&gt;زیرزیرعنوان&lt;/h3&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;p&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;p&gt;</h3>
+                    <p>برای تعریف یک پاراگراف از متن.</p>
+                    <pre><code>
+&lt;p&gt;این یک پاراگراف ساده از متن است.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;a&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;a&gt;</h3>
+                    <p>برای ایجاد یک لینک (hyperlink).</p>
+                    <pre><code>
+&lt;a href="https://www.google.com" target="_blank" title="رفتن به گوگل"&gt;بازدید از گوگل&lt;/a&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;img&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;img&gt;</h3>
+                    <p>برای قرار دادن یک تصویر.</p>
+                    <pre><code>
+&lt;img src="images/my-image.jpg" alt="توضیح مربوط به تصویر" width="300" height="200"&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</h3>
+                    <p>لیست‌های نامرتب (Unordered) و مرتب (Ordered) با آیتم‌های لیست.</p>
+                    <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;قهوه&lt;/li&gt;
+    &lt;li&gt;کتاب&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;برنامه‌ریزی&lt;/li&gt;
+    &lt;li&gt;اجرا&lt;/li&gt;
+&lt;/ol&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;span&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;span&gt;</h3>
+                    <p>یک کانتینر خطی (inline) برای استایل‌دهی به بخشی از متن.</p>
+                    <pre><code>
+&lt;p&gt;این یک &lt;span style="color: blue;"&gt;متن آبی&lt;/span&gt; است.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;strong&gt;, &lt;em&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;strong&gt;, &lt;em&gt;</h3>
+                    <p>&lt;strong&gt; برای متن مهم (بولد) و &lt;em&gt; برای تأکید (ایتالیک).</p>
+                    <pre><code>
+&lt;p&gt;این یک پیام &lt;strong&gt;بسیار مهم&lt;/strong&gt; است.&lt;/p&gt;
+&lt;p&gt;من واقعا &lt;em&gt;این کتاب&lt;/em&gt; را دوست دارم.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;br&gt;, &lt;hr&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;br&gt;, &lt;hr&gt;</h3>
+                    <p>&lt;br&gt; برای شکست خط اجباری و &lt;hr&gt; برای خط افقی جداکننده.</p>
+                    <pre><code>
+آدرس من:&lt;br&gt;
+خیابان اول، پلاک ۱۰&lt;br&gt;
+&lt;hr&gt;
+&lt;p&gt;شروع بخش دوم.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </details>
+        </section>
+
+        <section id="forms" class="html-section">
+            <h2>تگ‌های مربوط به فرم‌ها (Forms)</h2>
+            <p>فرم‌ها برای جمع‌آوری اطلاعات از کاربران استفاده می‌شوند.</p>
+
+            <details>
+                <summary>&lt;form&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;form&gt;</h3>
+                    <p>تگ اصلی برای ایجاد یک فرم HTML.</p>
+                    <pre><code>
+&lt;form action="/submit-form" method="POST"&gt;
+    &lt;!-- عناصر ورودی --&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;input&gt; (انواع مختلف)</summary>
+                <div class="code-example">
+                    <h3>&lt;input&gt;</h3>
+                    <p>پرکاربردترین تگ برای ایجاد انواع ورودی‌ها (text, password, email, checkbox, radio, etc.).</p>
+                    <pre><code>
+&lt;label for="username"&gt;نام کاربری:&lt;/label&gt;
+&lt;input type="text" id="username" name="username" placeholder="نام خود را وارد کنید" required&gt;
+&lt;br&gt;
+&lt;label for="password"&gt;رمز عبور:&lt;/label&gt;
+&lt;input type="password" id="password" name="password" required&gt;
+&lt;br&gt;
+&lt;input type="radio" id="male" name="gender" value="male"&gt;
+&lt;label for="male"&gt;مرد&lt;/label&gt;
+&lt;input type="checkbox" id="coding" name="interests" value="coding"&gt;
+&lt;label for="coding"&gt;برنامه‌نویسی&lt;/label&gt;
+&lt;br&gt;
+&lt;input type="submit" value="ارسال"&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;label&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;option&gt;, &lt;button&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;label&gt;, &lt;textarea&gt;, &lt;select&gt;, &lt;option&gt;, &lt;button&gt;</h3>
+                    <p>عناصر دیگر فرم برای برچسب‌گذاری، متن چندخطی، منوهای کشویی و دکمه‌ها.</p>
+                    <pre><code>
+&lt;label for="comments"&gt;نظرات شما:&lt;/label&gt;
+&lt;textarea id="comments" name="comments" rows="5"&gt;&lt;/textarea&gt;
+&lt;br&gt;
+&lt;label for="country"&gt;کشور:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value="iran"&gt;ایران&lt;/option&gt;
+    &lt;option value="germany"&gt;آلمان&lt;/option&gt;
+&lt;/select&gt;
+&lt;br&gt;
+&lt;button type="submit"&gt;ثبت نام&lt;/button&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;fieldset&gt;, &lt;legend&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;fieldset&gt;, &lt;legend&gt;</h3>
+                    <p>برای گروه‌بندی منطقی عناصر فرم و اضافه کردن عنوان به گروه.</p>
+                    <pre><code>
+&lt;fieldset&gt;
+    &lt;legend&gt;اطلاعات تماس&lt;/legend&gt;
+    &lt;label for="fullname"&gt;نام کامل:&lt;/label&gt;
+    &lt;input type="text" id="fullname" name="fullname"&gt;
+&lt;/fieldset&gt;
+                    </code></pre>
+                </div>
+            </details>
+        </section>
+
+        <section id="tables" class="html-section">
+            <h2>تگ‌های مربوط به جداول (Tables)</h2>
+            <p>برای نمایش داده‌ها به صورت ساختاریافته (ردیف و ستون).</p>
+
+            <details>
+                <summary>&lt;table&gt;, &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</summary>
+                <div class="code-example">
+                    <h3>ساختار کامل جدول</h3>
+                    <pre><code>
+&lt;table&gt;
+    &lt;caption&gt;لیست محصولات&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;نام&lt;/th&gt;
+            &lt;th&gt;قیمت&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;لپ‌تاپ&lt;/td&gt;
+            &lt;td&gt;۱۵۰۰ دلار&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;موس&lt;/td&gt;
+            &lt;td&gt;۲۵ دلار&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;مجموع ۲ محصول&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+                    </code></pre>
+                    <p>
+                        <ul>
+                            <li>**&lt;table&gt;**: کانتینر اصلی جدول.</li>
+                            <li>**&lt;caption&gt;**: عنوان جدول.</li>
+                            <li>**&lt;thead&gt;**: سربرگ جدول.</li>
+                            <li>**&lt;tbody&gt;**: بدنه جدول.</li>
+                            <li>**&lt;tfoot&gt;**: پاورقی جدول.</li>
+                            <li>**&lt;tr&gt;**: ردیف جدول.</li>
+                            <li>**&lt;th&gt;**: سلول سربرگ (بولد).</li>
+                            <li>**&lt;td&gt;**: سلول داده‌ای.</li>
+                            <li>**colspan/rowspan**: برای ادغام سلول‌ها.</li>
+                        </ul>
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <section id="multimedia" class="html-section">
+            <h2>تگ‌های چندرسانه‌ای (Multimedia)</h2>
+            <p>برای نمایش فایل‌های صوتی و تصویری.</p>
+
+            <details>
+                <summary>&lt;audio&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;audio&gt;</h3>
+                    <p>برای قرار دادن فایل صوتی.</p>
+                    <pre><code>
+&lt;audio controls&gt;
+    &lt;source src="audio/music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio/music.ogg" type="audio/ogg"&gt;
+    مرورگر شما از عنصر audio پشتیبانی نمی‌کند.
+&lt;/audio&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;video&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;video&gt;</h3>
+                    <p>برای قرار دادن فایل ویدیویی.</p>
+                    <pre><code>
+&lt;video width="640" height="360" controls poster="images/video-poster.jpg"&gt;
+    &lt;source src="video/my-video.mp4" type="video/mp4"&gt;
+    &lt;source src="video/my-video.webm" type="video/webm"&gt;
+    مرورگر شما از عنصر video پشتیبانی نمی‌کند.
+&lt;/video&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>&lt;iframe&gt;</summary>
+                <div class="code-example">
+                    <h3>&lt;iframe&gt;</h3>
+                    <p>برای جاسازی (embed) یک سند HTML دیگر (مثل ویدیوهای یوتیوب).</p>
+                    <pre><code>
+&lt;iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        width="560" height="315"
+        frameborder="0"
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+                    </code></pre>
+                </div>
+            </details>
+        </section>
+
+        <section id="advanced-concepts" class="html-section">
+            <h2>مفاهیم پیشرفته و نکات کاربردی</h2>
+
+            <details>
+                <summary>Entityهای HTML</summary>
+                <div class="code-example">
+                    <h3>Entityهای HTML</h3>
+                    <p>برای نمایش کاراکترهای خاص.</p>
+                    <pre><code>
+&lt;p&gt;برای تعریف یک تگ از &amp;lt;p&amp;gt; استفاده کنید.&lt;/p&gt;
+&lt;p&gt;کپی‌رایت &amp;copy; 2023 وب‌سایت من.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>کامنت‌ها</summary>
+                <div class="code-example">
+                    <h3>کامنت‌ها</h3>
+                    <p>یادداشت‌هایی که توسط مرورگر نادیده گرفته می‌شوند.</p>
+                    <pre><code>
+&lt;!-- این یک کامنت در HTML است --&gt;
+&lt;p&gt;این یک پاراگراف است.&lt;/p&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>ویژگی‌های عمومی (Global Attributes)</summary>
+                <div class="code-example">
+                    <h3>ویژگی‌های عمومی (id, class, data-*, tabindex, title)</h3>
+                    <p>ویژگی‌هایی که در تقریباً هر تگ HTML قابل استفاده‌اند.</p>
+                    <pre><code>
+&lt;div id="main-content" class="container" data-user-id="123" title="محتوای اصلی"&gt;
+    &lt;p&gt;محتوای اصلی.&lt;/p&gt;
+&lt;/div&gt;
+&lt;button tabindex="1"&gt;دکمه ۱&lt;/button&gt;
+                    </code></pre>
+                </div>
+            </details>
+
+            <details>
+                <summary>ساختار فایل و پوشه پیشنهادی</summary>
+                <div class="code-example">
+                    <h3>ساختار فایل و پوشه پیشنهادی</h3>
+                    <pre><code>
+my-website/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── images/
+│   ├── logo.png
+│   └── product-image.jpg
+└── favicon.ico
+                    </code></pre>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>این مرجع توسط هوش مصنوعی و با هدف یادگیری مجدد HTML تهیه شده است.</p>
+    </footer>
+</body>
+</html>
